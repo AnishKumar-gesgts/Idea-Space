@@ -631,3 +631,96 @@ The first is publishable science. The second is not a convincing architecture-aw
 **[R39]** Mi & Mueller, *Toward Uncertainty-Aware and Generalizable Neural Decoding for Quantum LDPC Codes* (2025 preprint).
 
 **[R40]** Barber et al., *A real-time, scalable, fast and resource-efficient decoder for a quantum computer*, Nature Electronics (2025), plus [R8], [R22], and the photonic real-time FPGA chain in [R4].
+
+# Revision 1 — adversarial STORM rerun and expanded candidate set
+
+**Revision date:** 13 September 2026
+**Scope:** Preserve all 30 original ideas, add five candidates, and replace the optimistic first-pass ranking with a stricter research decision. The earlier scores remain historical; the table below is the current recommendation.
+
+## Method and evidence boundary
+
+This is a **STORM-style, role-based rerun**, not a claim that named researchers or a non-OpenAI model were contacted. Sixteen simulated experts independently interrogated the ideas from the perspectives listed above, then a skeptical synthesis applied the same seven dimensions. The review used current literature anchors already recorded in this file plus a fresh search for fusion-based loss tolerance, detector metadata, photon-number information, and correlated decoding. A real external model invocation would not make the result more reliable unless its sources, prompts, and outputs were reproducible.
+
+The central correction is methodological: “beats MWPM” is meaningful only against **properly calibrated MWPM**, correlated/weighted matching where supported, and a small-code likelihood audit. An uncalibrated or binary-erasure-only baseline is not evidence. Every positive claim must report logical error rate with confidence intervals, decoder latency, calibration cost, and the information supplied to each decoder.
+
+## Five added ideas
+
+### 31. Information-Bottleneck Photonic Decoder — **7.96/10**
+
+Learn or optimize the smallest observable feature vector that preserves the posterior over QEC faults: for example, fusion class, time residual, PNR bucket, source identity, and recent detector state. The research question is whether a compact sufficient statistic can retain the advantage of a rich optical record while remaining FPGA-friendly. Compare full-record inference, learned compression, hand-designed statistics, and calibrated correlated MWPM. The novelty is a measured accuracy/latency/information frontier, not “use an autoencoder.” **Risk:** generic representation learning or leakage from labels. **Kill:** no held-out logical advantage after compression, or a simpler hand-designed vector matches it. **N 7.5 · P 8.0 · A 9.0 · F 7.5 · G 9.0 · H 9.0 · U 8.0.**
+
+### 32. Counterfactual Fusion-Repair Decoder — **7.74/10**
+
+When a fusion result is ambiguous, infer the most likely *counterfactual* outcomes under plausible missed-click, multiphoton, and distinguishability causes, then marginalize the resulting detector graphs instead of committing to one hard graph. This directly targets architecture-dependent ambiguity and can reuse the same local optical table as Ideas 1–5. Compare hard graph selection, mixture-of-graphs inference, and calibrated correlated MWPM. **Risk:** expensive graph mixtures and overlap with generic Bayesian smoothing. **Kill:** hard selection and marginalization agree across realistic regimes. **N 8.0 · P 8.0 · A 9.5 · F 6.5 · G 8.0 · H 6.5 · U 8.0.**
+
+### 33. Active-Calibration Decoder — **7.61/10**
+
+Use decoder uncertainty to select the next calibration measurement: a timing calibration, source \(g^{(2)}\), visibility pair, detector-efficiency check, or syndrome shot. The objective is lower logical-error prediction or safer decoder selection per calibration shot, not generic active learning. Compare fixed calibration budgets, random calibration, optical-only calibration, syndrome-only calibration, and an oracle parameter estimate. **Risk:** the optimal experiment may be obvious or too hardware-specific. **Kill:** active selection does not reduce decision uncertainty at a fixed budget. **N 7.5 · P 7.5 · A 8.5 · F 7.0 · G 8.5 · H 7.0 · U 7.5.**
+
+### 34. Causal-Order Decoder for Loss and Feed-Forward — **7.70/10**
+
+Decode with the causal order imposed by source emission, switch choice, detector arrival, feed-forward, and reset, rather than treating a whole round as an unordered syndrome snapshot. A factor graph or bounded smoother can use early observations to update later fusion priors and expose when feed-forward converts loss into a different fault class. Compare time-ordered inference, shuffled-record inference, calibrated correlated MWPM, and an oracle causal model. **Risk:** the chosen architecture may have no exploitable causal side information. **Kill:** causal ordering changes neither posterior calibration nor logical performance. **N 7.5 · P 8.0 · A 9.5 · F 7.0 · G 8.0 · H 7.5 · U 8.0.**
+
+### 35. Decoder-Designed Photonic Syndrome Schedule — **7.83/10**
+
+Co-design the temporal spacing, fusion grouping, detector window, and optional redundant check so that the resulting syndrome stream is easier to decode under a fixed optical loss and latency budget. The decoder is evaluated jointly with the schedule, but the baseline must include the best schedule found for calibrated MWPM. This turns photonic architecture details into an experimentally testable systems result rather than a decoder-only claim. **Risk:** schedule optimization can overwhelm attribution and become architecture search. **Kill:** the gain disappears when MWPM receives the same schedule optimization budget. **N 7.5 · P 8.5 · A 9.5 · F 6.5 · G 8.5 · H 7.0 · U 8.0.**
+
+## Revised all-idea ranking
+
+| Rank | Idea | Score | Decision | Feedback from the adversarial panel |
+|---:|---|---:|---|---|
+| 1 | 1. Fusion-Hypergraph Decoder | **8.60** | Core | Keep only if the physical factors create measurable higher-order correlations after a correlated-MWPM comparison. |
+| 2 | 2. Latent Photon-Presence Decoder | **8.53** | Core | Strongest hidden-state thesis; choose an architecture where loss is genuinely ambiguous, not already heralded. |
+| 3 | 4. Multiphoton-Contamination Decoder | **8.43** | Core | Excellent optical mechanism; restrict Fock simulation to local primitives and use held-out source statistics. |
+| 4 | 5. Partial-Distinguishability Decoder | **8.15** | Core/module | Merge spectral information from 16; average visibility must not be the only input. |
+| 5 | 3. Full Photon-Number-Pattern Decoder | **8.10** | Module | Promote only where PNR changes the conditional fault posterior beyond fusion labels. |
+| 6 | 20. Confidence-to-Erasure GKP Decoder | **8.05** | CV branch | Keep as a separate CV project; it is not evidence for the DV fusion thesis. |
+| 7 | 15. Timing-Jitter Decoder | **7.97** | Core/module | A particularly clean first experiment if timestamps are available and bin ambiguity is physical. |
+| 8 | 31. Information-Bottleneck Decoder | **7.96** | Extension | Best route from a rich physical model to bounded FPGA state; avoid generic learned compression. |
+| 9 | 6. Outcome-Semantic Fusion Decoder | **7.90** | First implementation | Use as the smallest ablation and software-stack milestone, not the final novelty claim. |
+| 10 | 22. Photonic Belief Propagation | **7.88** | Backbone | Use BP/min-sum as an inference engine only; the photonic factorization is the contribution. |
+| 11 | 35. Decoder-Designed Syndrome Schedule | **7.83** | Second stage | Require equal schedule optimization for MWPM to avoid an unfair baseline. |
+| 12 | 21. Hybrid DV-CV Factor Graph | **7.80** | High risk | Pursue only with a physically coupled DV/CV primitive, not a software interface. |
+| 13 | 29. Decoder-Control Co-Design | **7.78** | Second paper | Promising after a passive decoder wins; scope and attribution are major risks. |
+| 14 | 32. Counterfactual Fusion-Repair | **7.74** | Extension | A useful latent-state module if graph-mixture cost stays bounded. |
+| 15 | 10. Multiplexing-State Decoder | **7.70** | Module | Require held-out routing histories; scalar route loss is not enough. |
+| 16 | 34. Causal-Order Decoder | **7.70** | Module | Test whether feed-forward creates usable information flow before building a smoother. |
+| 17 | 18. Loss-Aware GKP Decoder | **7.62** | CV branch | Sharpen beyond transmissivity-dependent variance and compare to established inner decoders. |
+| 18 | 33. Active-Calibration Decoder | **7.61** | Extension | Measure uncertainty reduction per shot; generic active learning is not sufficient. |
+| 19 | 14. Detector-Memory Decoder | **7.60** | Core/module | Strong if sourced detector memory survives conditional calibration. |
+| 20 | 24. Reliability-Guided Local Statistics | **7.58** | FPGA backbone | Hardware-friendly, but novelty comes from the photonic reliabilities. |
+| 21 | 28. Uncertainty-Aware Robust Decoder | **7.53** | Extension | Compare against uncertainty-aware and adaptively reweighted MWPM. |
+| 22 | 16. Spectral/Frequency-Mode Decoder | **7.50** | Merge into 5 | Do not duplicate the distinguishability project. |
+| 23 | 19. Non-Gaussian GKP Likelihood | **7.50** | CV branch | Needs a sourced non-Gaussian mechanism and a LUT/fixed-point path. |
+| 24 | 27. Online Self-Calibrating Decoder | **7.45** | Infrastructure | Useful transfer test, weak standalone novelty. |
+| 25 | 8. Generated-Topology Decoder | **7.40** | Module | Demonstrate a decoding advantage, not just graph construction convenience. |
+| 26 | 9. Route-Dependent Loss Decoder | **7.28** | Module | Calibrated MWPM already handles nonuniform edge weights; add history or correlation. |
+| 27 | 13. Detector-Efficiency Bayesian Decoder | **7.25** | Module | Fold into Idea 2 unless efficiency creates delayed ambiguity. |
+| 28 | 11. MZI/Beamsplitter Drift | **7.15** | Infrastructure | Compare against adaptive MWPM, not a stale static graph. |
+| 29 | 12. Coherent Optical-Fault Decoder | **7.15** | Later/high risk | Scientifically deep but difficult to scale and map to the proposed FPGA. |
+| 30 | 23. Photonic GNN | **7.00** | Baseline | Use for comparison and generalization tests, not as the novelty. |
+| 31 | 7. Boosted-Fusion-Aware Decoder | **6.80** | Module | Only worthwhile if boosted outcomes expose soft information. |
+| 32 | 26. Mixture-of-Experts | **6.67** | Avoid as core | Generic regime specialization is crowded and hardware-heavy. |
+| 33 | 17. Analog GKP Soft Information | **6.65** | Established baseline | Important comparator, not a new claim. |
+| 34 | 25. Photonic Ensemble | **6.38** | Helper | Useful accuracy baseline with limited explanatory value. |
+| 35 | 30. Streaming FPGA Decoder | **6.05** | Validation | Essential implementation evidence, not a standalone research idea. |
+
+The score ordering around ranks 18–20 is not statistically meaningful; use the decision labels and kill tests rather than pretending that a 0.01-point difference is real.
+
+## Revised recommendation
+
+Build **Ideas 1 + 2 + 6 + 22** as one bounded project: an outcome-conditioned latent-factor decoder for one fusion-based dual-rail primitive, with BP/min-sum as the first inference engine and semantic fusion outcomes as the first ablation. Add Idea 4 or 5—not both initially—so the physical mechanism is identifiable. Add Idea 15 or 14 only after the static primitive shows an information advantage.
+
+The minimum credible comparison is:
+
+1. unweighted MWPM (sanity baseline);
+2. correctly calibrated weighted MWPM;
+3. correlated/hyperedge-capable matching or the best supported decomposition;
+4. BP/min-sum with the same marginalized model but no optical metadata;
+5. the proposed decoder with observable metadata;
+6. a small-code maximum-likelihood or direct-sampling audit;
+7. an oracle latent-state decoder as an upper bound only.
+
+Use Stim for the outer detector process and logical sampling, Strawberry Fields or a local Fock model for the selected optical primitive, and PyMatching only where its graph assumptions are explicit. Report \(P_L\), confidence intervals, decoder ranking, calibration shots, memory, throughput, latency, and model mismatch. Start at \(d=3\), then \(d=5\); a single distance cannot establish a decoder advantage.
+
+**Go gate:** continue only if the metadata-aware decoder wins against calibrated correlated MWPM on held-out physical parameters and the gain survives a direct-sampling audit. **No-go gate:** stop or reframe if the advantage vanishes after MWPM calibration, is present only against an unfair binary baseline, depends on oracle labels, or cannot be reproduced with a compact observable record. A negative result that identifies when photonic details do *not* matter is publishable and more credible than an unbounded “universal photonic decoder” claim.
