@@ -2,7 +2,7 @@
 
 **Date:** 27 September 2026
 
-**Status:** Literature-screened research hypotheses; no Phase 0 result or verified novelty claim yet.
+**Status:** Idea 1's [Phase 0 mechanism test and decision](experiments/calibration-sufficiency-phase0/RESULTS.md) are complete. The original ranking below is retained as a pre-test screen; Idea 1 is now **no go as a standalone project** on available evidence. Ideas 2–8 remain untested hypotheses.
 
 **Purpose:** Find a new software-first quantum photonics / quantum information science project after the [photonic decoder Phase 0 decisions](Photonic%20Decoder%20Evaluations.md#follow-up-decision-neither-advances-as-a-decoder-project). This is a separate search, not a renamed QEC decoder.
 
@@ -132,7 +132,7 @@ The [2026 trace-driven controller](https://arxiv.org/abs/2608.07163) already joi
 
 ## Decision after STORM synthesis
 
-**Start with Idea 1's Phase 0 only.** It tests whether a real measurement gap changes a meaningful end-to-end choice. Idea 2 is the best alternate if a professor or experimental group can share a documented observable source-history channel; without one, its apparent gain is at high risk of relying on simulator-only frequencies. Idea 3 is the best alternate when converter calibration data are available. Do not build a broad simulator, optimize a controller, or write a paper claim until one of these first gates passes.
+**Historical pre-test recommendation:** Start with Idea 1's Phase 0 only. It tests whether a real measurement gap changes a meaningful end-to-end choice. Idea 2 is the best alternate if a professor or experimental group can share a documented observable source-history channel; without one, its apparent gain is at high risk of relying on simulator-only frequencies. Idea 3 is the best alternate when converter calibration data are available. Do not build a broad simulator, optimize a controller, or write a paper claim until one of these first gates passes.
 
 **Positive threshold for expanding Idea 1:** two platform-consistent source models both fit routine observables within predeclared finite-shot uncertainty; they lead to different best operating choices or a consequential difference in useful delivered rate; one practical additional measurement resolves that difference on held-out simulations; the effect survives sourced parameter uncertainty and all attempts are counted. A mere difference in density-matrix entries, trace distance, or conditional fidelity is insufficient.
 
@@ -154,3 +154,9 @@ The [2026 trace-driven controller](https://arxiv.org/abs/2608.07163) already joi
 3. Freeze one swap primitive, allowed observations, shot budget, target threshold, output metric, parameter uncertainty, and kill criterion **before** optimizing extra measurements.
 4. Run ideal/noise-limit checks and the smallest exact optical calculation. Connect its conditional state and herald probability to the protocol-level rate model; verify the latter with a second derivation or independent small simulator.
 5. Only if the first gate passes, expand to multiple source conditions, held-out model families, uncertainty coverage, resource-cost robustness, and a direct comparison with the nearest published method. The simulator code becomes a reproducible artifact of the scientific result, not its novelty claim.
+
+## 27 September 2026 — Idea 1 Phase 0 decision
+
+The [exact two-mode test, code, checks, and limits](experiments/calibration-sufficiency-phase0/RESULTS.md) found a genuine *model* ambiguity: identical source pair-state fidelity and aggregate HOM visibility can accompany different optimal open-versus-filter swap choices at a declared 0.96 Bell-fidelity target. In the illustrative $c=0.92$ pair, the open analyzer gives swapped fidelity 1.000 for aligned spectral labels but 0.923 for reversed labels; a common-bin filter raises the latter to 0.993 while lowering its herald probability from 0.250 to 0.215 per double-pair attempt. An ordinary polarization-resolved HOM measurement exposes the distinction.
+
+**Updated selection: no go for Idea 1 as a standalone project on present evidence.** The source pair, filter, target, and detector contrast are not calibrated to one actual device; absolute useful rate and multipair false heralds are unknown. More importantly, [Humble and Grice (2008)](https://www.ornl.gov/publication/effects-spectral-entanglement-polarization-entanglement-swapping-and-type-i-fusion) already analyze polarization-linked spectral structure in entanglement swapping across source configurations. The original 8.3 score is a preserved *pre-test judgment*, not a current endorsement. Reopen only with a measured source/detector package and a demonstrated decision gap beyond the lab's existing polarization-resolved characterization. Idea 2 is next for a Phase 0 **only if** an observable source-history channel is documented; otherwise Idea 3's converter-data gate is the more grounded next screen.
