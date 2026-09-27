@@ -4,6 +4,8 @@
 
 **Status:** Idea 1's [Phase 0 mechanism test and decision](experiments/calibration-sufficiency-phase0/RESULTS.md) are complete. The original ranking below is retained as a pre-test screen; Idea 1 is now **no go as a standalone project** on available evidence. Ideas 2–8 remain untested hypotheses.
 
+**Novelty-first update:** The [Round 2 literature screen and revised project shortlist](Novelty-First%20Quantum%20Photonics%20Idea%20Search%20%E2%80%94%20Round%202.md) supersede the project-selection priorities below. This earlier scorecard remains as a record of what was proposed before stricter closest-work screening.
+
 **Purpose:** Find a new software-first quantum photonics / quantum information science project after the [photonic decoder Phase 0 decisions](Photonic%20Decoder%20Evaluations.md#follow-up-decision-neither-advances-as-a-decoder-project). This is a separate search, not a renamed QEC decoder.
 
 > **How to read the ranking:** These are provisional research priorities, **not probabilities of publication or promises of advantage**. The earlier hypergraph ranking was too confident before its physical and logical gates were tested. Every idea below has a first experiment capable of ending it. The research group of Professor Itay Hen is useful context for the student's QIS training; the ideas are intentionally not presented as his group's agenda or as endorsed by him.
