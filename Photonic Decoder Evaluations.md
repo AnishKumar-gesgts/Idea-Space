@@ -1,5 +1,7 @@
 # STORM-Style Multi-Perspective Evaluation of 30 Photonic-Aware Decoder Ideas
 
+> **Current decision (27 September 2026):** The 13 September ranking below is retained as a historical idea screen, not a current project recommendation. Subsequent Phase 0 work did not establish a physically grounded fusion-hypergraph advantage, and the latent-presence test found negligible incremental gain under strong loss records. See [the evidence-led pivot and newly screened projects](#27-september-2026-evidence-led-pivot-after-phase-0) at the end. Its priority judgments supersede the original scorecard; the original scores have not been silently edited.
+
 **Date:** 13 September 2026  
 **Question:** Which photonic-aware QEC decoder directions are sufficiently novel, physically justified, capable of outperforming a properly calibrated/correlated MWPM baseline, general enough to matter, and realistic enough to simulate now and eventually implement on an FPGA?
 
@@ -288,7 +290,7 @@ The most defensible novelty comes from the **physical factor model**, not from c
 
 **Panel verdict:** Very good if formulated as *logical-error-optimal erasure conversion*, not merely postselection. Confidence/postselection and decoder confidence already exist, while photonics naturally benefits from converting hidden errors into heralded erasures. [R30,R35]  
 **Why MWPM can lose:** the decoder/controller can choose when uncertain analog information should become an explicit erasure, changing the channel seen by the outer code.  
-**Key experiment:** optimize the threshold \(t\) or policy \(a(q_{m mod})\) for total logical error, including the cost of erasures.  
+**Key experiment:** optimize the threshold \(t\) or policy \(a(q_{\rm mod})\) for total logical error, including the cost of erasures.
 **Risk:** threshold-decision methods already appear in GKP work; the contribution must be joint optimization under realistic loss + finite squeezing + outer-code decoding.  
 **Panel:** CV ++; QEC ++; FPGA ++; reviewer +.
 
@@ -631,3 +633,82 @@ The first is publishable science. The second is not a convincing architecture-aw
 **[R39]** Mi & Mueller, *Toward Uncertainty-Aware and Generalizable Neural Decoding for Quantum LDPC Codes* (2025 preprint).
 
 **[R40]** Barber et al., *A real-time, scalable, fast and resource-efficient decoder for a quantum computer*, Nature Electronics (2025), plus [R8], [R22], and the photonic real-time FPGA chain in [R4].
+
+---
+
+# 27 September 2026: evidence-led pivot after Phase 0
+
+## Decision and method
+
+**Retire the fusion-hypergraph decoder as the lead project.** The original 8.60/10 was an ex ante judgment of upside, not a calibrated probability of success. Subsequent tests showed a large *conditional* gain for an assumed frequent joint fault, but no selected, calibrated optical architecture that produces that fault at a useful rate and supports a native finite logical comparison. The derived boosted ancilla-phase fault was graphlike; extra-photon false-accept records retained Bell coherence and could not be assigned stochastic Pauli hyperedges. The [physical-channel audit](../Photonic-Decoders/Hypergraph/phase0/PHYSICAL_CHANNEL_AUDIT.md), [bounded optical test](../Photonic-Decoders/Hypergraph/phase0/BOUNDED_OPTICAL_D3_RESULTS.md), and [published-source mixture follow-up](../Photonic-Decoders/Hypergraph/phase0/PAPER_SOURCE_CHANNEL_RESULTS.md) are the controlling evidence. A different future physical mechanism could reopen the question, but it is not the current search program.
+
+The latent photon-presence proposal is also demoted. Its [exact Phase 0 sensitivity test](../Codex/2026-09-26/the-x20/work/phase0-validation/Latent-Photon-Presence/phase0/RESULTS.md) gave almost no incremental joint-decoder gain beyond HMM-smoothed matching with strong records. Its positive cells required deliberately ambiguous, unvalidated accepted-loss actions. [Bayesian tracking of nonideal photonic fusion](https://www.nature.com/articles/s41534-023-00705-9) also narrows the novelty claim. These results change the *priorities*, not the historical descriptions above.
+
+This update applies a STORM-style process: distinct technical perspectives ask source-grounded questions, then a skeptical synthesis retains disagreements. The perspectives are **analytical roles, not contacted human experts**. The search was selective: it compared recent primary research, the local negative results, and the [Ideation Space criteria](Photonic%20QEC%20Research%20Ideation%20%E2%80%94%20Model%20Handoff%20Protocol%20%28Unedited%29.md#4-required-quality-criteria-for-every-proposed-project). It produced **two conditional candidates**, not a new high-confidence winner. Literature screening is current to 27 September 2026; absence of a close paper in this search does not prove novelty.
+
+| Perspective | Hard question introduced by the hypergraph failure | Consequence for selection |
+|---|---|---|
+| Optical instrument physicist | Is the *conditional quantum action* derived for each accepted record, rather than inferred from click count or Bell-diagonal entries alone? | Reject a Pauli decoder that silently discards coherent terms. |
+| Detector physicist | Does the proposed time-memory channel survive the actual pulse spacing, detector recovery curve, and routing schedule? | Require a measured or published response curve before a decoder sweep. |
+| QEC theorist | Does the effect change a finite logical decision after correct check masks and boundaries? | Local optical classification or extra detector events alone do not pass. |
+| Inference researcher | Is the information available in the record, and does the proposed method beat a baseline given the *same* record? | Include an information oracle only as an audit ceiling. |
+| Systems engineer | Does a useful operating point exist without slowing the optical clock, discarding most shots, or requiring inaccessible metadata? | Report throughput and unsupported-event fraction beside logical error. |
+| Skeptical reviewer | Is this a new scientific question, or a renamed member of the original 30 ideas? | Describe overlap and demand a narrower falsifiable contribution. |
+
+## New priority order
+
+The scores below apply the handoff's six criteria: novelty (N), importance (I), executable feasibility without hardware (F), fundamental optical-to-QEC integration (S), publication depth (P), and science-fair clarity (C). They are **judgmental screening scores, not measured success probabilities**. An unpassed physical gate caps priority regardless of the average.
+
+| Priority | Project | N | I | F | S | P | C | Present decision |
+|---:|---|---:|---:|---:|---:|---:|---:|---|
+| 1 | **Record-conditioned coherent-fault boundary for false-conclusive fusion** | 7 | 9 | 5 | 9 | 8 | 8 | **Phase 0 only**: strongest physics-to-QEC mismatch, with a known local counterexample; difficult native propagation. |
+| 2 | **Detector-recovery-conditioned erasure decoding** | 6 | 8 | 8 | 8 | 7 | 8 | **Phase 0 only**: more executable and experimentally connected; must show recovery overlap and gain over history-aware matching. |
+| — | Historical physical-noise compiler | 7 | 8 | 7 | 9 | 8 | 7 | Shared validation framework, not a competing decoder novelty claim. |
+| — | Original fusion-hypergraph and latent-presence decoders | — | — | — | — | — | — | Retired as lead projects on current evidence; retain records above. |
+
+If only one **research question** can be attempted next, choose Project 1's bounded *model-validity* question and stop if its logical consequence is too small. If the priority is a faster, conventional Stim/PyMatching project with a cleaner implementation path, choose Project 2 after checking the detector timing gate. Neither is pre-approved for a full paper or FPGA build.
+
+## Candidate 1 — Record-conditioned coherent-fault boundary for false-conclusive fusion
+
+**Core question.** When an extra photon plus detector loss produces an apparently valid fusion record, when does replacing its conditional quantum action by a stochastic Pauli/erasure channel give the *wrong logical-risk or decoder decision*?
+
+**Physical mechanism and evidence.** In the local four-mode audit, some accepted extra-photon records have nonzero Bell-basis off-diagonal terms. The [project audit](../Photonic-Decoders/Hypergraph/phase0/PHYSICAL_CHANNEL_AUDIT.md) withdrew the earlier projected joint-Pauli rate for precisely this reason. Multiphoton emission and loss are real concerns in heralded photonic circuits, but this project's source incidence and complete postfusion instrument are not measured. Recent [heralded-circuit error analysis](https://arxiv.org/abs/2305.08452) and a [2026 loss/multiphoton comparison](https://arxiv.org/abs/2608.01549) show nearby source-model work; [coherent-error QEC theory](https://www.nature.com/articles/s41534-018-0106-y) is older and broad. The narrow contribution would be a **record-specific, falsifiable validity boundary** for a photonic fault reduction, not the claim that coherent errors or multiphoton noise are new.
+
+**Why two scales are essential.** A small optical Fock-space calculation supplies the conditional completely positive instrument for full, partial, and false-conclusive PNR records, preserving off-diagonal terms and leakage. A bounded exact density-matrix or tensor-network stabilizer-memory calculation tests logical consequences; Stim supplies only those branches independently shown to be Pauli/erasure-representable. Averaging a coherent record into a Pauli probability before the comparison would remove the question being tested.
+
+**Minimum viable Phase 0.** Specify one source preparation and one two-photon Bell analyzer, a finite detector-efficiency grid, and a small entangled reference. Verify probability conservation, ideal/zero-extra-photon limits, Fock cutoff, and complete per-record conditional states. For a short finite code or teleportation-memory gadget with a declared logical observable, compute exact logical-class failure or channel distance under (i) the full instrument, (ii) a justified physical randomization if one exists, and (iii) the best calibrated Pauli/erasure reduction using the same records. Report *conditional-on-fault* effects separately from absolute risk until an independent fault-incidence range is justified. The code-size and fault-rate grid must be fixed before seeing decoder outcomes.
+
+**Paper path and usefulness.** Extend to two distinct source mechanisms and two analyzer designs, detector loss, partial outcomes, bounded code sizes, model-mismatch bounds, and resource-cost accounting. A result that identifies when common Pauli compilations fail could change photonic QEC simulation and experimental characterization even if no new decoder beats MWPM. A genuinely usable coherent-aware decoder would require a resolved logical benefit on that physically supported channel.
+
+**Main risk / kill criterion.** The exact coherent simulation may remain too small to establish a logical effect; relevant accepted mass may be negligible after realistic source incidence and strong PNR; stabilizer measurements may wash out the coherent difference. **Stop the decoder branch** if the full instrument and best justified reduction agree within predeclared precision across the physical range. Publish or retain a model-validity result only if the disagreement is independently meaningful. Never create a Pauli hyperedge by deleting off-diagonal matrix elements.
+
+**Relationship to old ideas.** This sharpens old #4 (multiphoton contamination) and #12 (coherent optical faults) around a specific demonstrated false-accept problem. It is a new *question and test*, not a newly discovered physical effect or a rebadged hypergraph plan.
+
+## Candidate 2 — Detector-recovery-conditioned erasure decoding
+
+**Core question.** Can a measured detector recovery curve and the known optical routing schedule predict *which later fusion parities are unavailable or unreliable* well enough to change logical failure beyond equally informed, history-conditioned erasure-aware matching?
+
+**Physical mechanism and evidence.** A detector click can temporarily reduce later detection efficiency; reuse of that detector across closely spaced scheduled photons makes consecutive measurement records dependent. A [2026 detector-response study](https://link.springer.com/article/10.1140/epjqt/s40507-026-00540-9) measures recovery behavior for SNSPD and SPAD devices. This establishes a plausible device mechanism, **not** a QEC decoder advantage or a claim that the same recovery values apply to a chosen fusion processor. The detector and schedule must share actual channels and have pulse intervals within the recovery window. If fusion measurements use independent pixels or sufficiently separated slots, the hypothesis has no target.
+
+**Why two scales are essential.** A calibrated detection-response model converts incident photons, preceding *observed* clicks, channel identity, and slot timing into conditional PNR records; a small optical Bell model determines which parity is known, wrong, or erased. Stim with an explicit finite fusion/check schedule propagates those record-conditioned masks to logical failure. Simulator-only incident-photon truth and hidden detector state are never decoder inputs.
+
+**Minimum viable Phase 0.** Choose one documented detector technology, clock period, and reuse schedule. First compare recovery time with slot separation; this can terminate the study without building a decoder. Then simulate ideal, finite-recovery, and shuffled-history controls at matched average efficiency. Compare static-efficiency MWPM, per-record erasure-aware MWPM, **history-conditioned erasure-aware MWPM**, and a bounded joint temporal decoder using identical click histories and check masks. Report the number of genuinely ambiguous parity records, logical failure, throughput, and uncertainty. A history-only prediction gain is insufficient; the primary claim needs a resolved logical consequence.
+
+**Paper path and usefulness.** Vary recovery curves, routing/pixel reuse, clock speed, code size, calibration shift, and missing-record handling. This could yield a design rule for detector parallelism or clock rate, even if history-aware MWPM fully captures the available decoding gain. [Photonic FBQC hardware](https://www.nature.com/articles/s41586-025-08820-7) depends on integrated sources, detectors, and fusion, so a measured scheduling/recovery tradeoff is relevant; no current processor is claimed to operate in the proposed regime.
+
+**Main risk / kill criterion.** For a realistic schedule, there may be no detector reused during recovery, or every miss may already be a perfectly located erasure. **Stop the decoder claim** if history-conditioned MWPM closes the logical gap, or if the measured timing regime yields negligible extra erasure. Do not shorten the clock or weaken the detector merely to manufacture a win.
+
+**Relationship to old ideas.** This is a concrete, schedule-dependent refinement of old #14 (detector-memory decoder), with old #9/#10 routing-history work as controls. Its novelty is conditional on the joint detector-response, architecture, and logical-risk test; detector dead time itself is established physics.
+
+## Directions screened out in this iteration
+
+| Direction | Why it does not become a new lead |
+|---|---|
+| Adaptive selection of which fusion parity survives failure | [Dynamic bias arrangement](https://arxiv.org/abs/2303.16122), [emitter-tailored encoded fusions](https://arxiv.org/html/2410.06784), and recent [fusion-strategy theory](https://arxiv.org/abs/2609.02559) occupy much of this space. It is a serious architecture topic, but a generic adaptive-policy proposal fails the novelty test. |
+| Timing-window or mode-overlap decoder | [Arrival-time-resolved fusion data](https://www.nature.com/articles/s41586-024-07357-5) make the physics real, but old #5/#15/#16 and historical QEC-optimized temporal filtering already cover the broad idea. A new proposal needs a specific residual advantage over timestamp-calibrated matching and a throughput-aware objective. |
+| Another source-spin correlation decoder | [Emitter-spin noise propagation](https://arxiv.org/html/2410.06784) is physically credible, but without a measured useful retained joint action this would repeat the hypergraph project's missing gate. Controlled Pauli injection can be a proof of principle, not evidence of a natural hardware advantage. |
+| Improved latent-presence HMM or generic Bayesian fusion tracker | The exact strong-record control was negative and [prior Bayesian fusion tracking](https://www.nature.com/articles/s41534-023-00705-9) narrows novelty. Reopen only with a named calibrated delayed observable and a logical gain beyond HMM-smoothed matching. |
+
+## Decision rule for the next iteration
+
+Complete only the **first falsifying gate** of the chosen candidate. Before any larger code sweep, version the physical assumptions and source references, show the observable-to-action map, compare strong baselines with identical information, and predeclare the primary regime and minimum consequential effect. A positive toy sensitivity result is not a physical go. A negative result on a justified mechanism is a completed scientific finding and should stay in this document.

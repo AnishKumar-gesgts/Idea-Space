@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Photonic QEC Research Ideation — Model Handoff Protocol (Unedited).md",
+                "file": "Photonic Decoder Evaluations.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Photonic QEC Research Ideation — Model Handoff Protocol (Unedited)"
+              "title": "Photonic Decoder Evaluations"
             }
           }
         ]
@@ -190,6 +190,9 @@
   },
   "active": "cc7e78d1abafe386",
   "lastOpenFiles": [
-    "Photonic Decoder Evaluations.md"
+    "Photonic QEC Research Ideation — Model Handoff Protocol (Unedited).md",
+    "Photonic Decoder Evaluations.md",
+    "Photonic Decoder Evaluations 1.md",
+    "Photonic Decoder Evaluations"
   ]
 }
