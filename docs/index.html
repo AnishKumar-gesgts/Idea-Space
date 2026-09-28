@@ -5,97 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Idea Space</title>
   <style>
-    :root {
-      color-scheme: light;
-      --ink: #172033;
-      --muted: #536079;
-      --accent: #6d28d9;
-      --accent-dark: #312e81;
-      --surface: #fbfaff;
-      --card: #ffffff;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--surface);
-      font: 16px/1.6 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-    header {
-      padding: 5rem 1.5rem 4rem;
-      color: white;
-      background: linear-gradient(120deg, var(--accent-dark), var(--accent));
-    }
-    main { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
-    .eyebrow { margin: 0 0 .5rem; letter-spacing: .12em; text-transform: uppercase; opacity: .8; }
-    h1 { margin: 0; font-size: clamp(2.5rem, 7vw, 4.5rem); line-height: 1.05; }
-    h2 { margin-top: 2.5rem; color: var(--accent-dark); }
-    .lede { max-width: 48rem; margin: 1rem 0 0; font-size: 1.2rem; opacity: .9; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
-    .card {
-      display: block;
-      padding: 1.25rem;
-      color: inherit;
-      background: var(--card);
-      border: 1px solid #e8e5f2;
-      border-radius: .8rem;
-      box-shadow: 0 .4rem 1.5rem rgba(49, 46, 129, .08);
-      text-decoration: none;
-    }
-    .card:hover { border-color: var(--accent); transform: translateY(-2px); }
-    .card h3 { margin: 0 0 .35rem; color: var(--accent); }
-    .card p { margin: 0; color: var(--muted); }
-    .note { padding: 1rem 1.25rem; border-left: 4px solid var(--accent); background: #f1eafe; }
-    code { padding: .15rem .35rem; background: #eeeafa; border-radius: .25rem; }
+    body { max-width: 46rem; margin: 4rem auto; padding: 0 1.5rem; color: #172033; background: #fbfaff; font: 17px/1.6 system-ui, sans-serif; }
+    h1 { line-height: 1.2; }
+    a { color: #5b21b6; }
+    li { margin: .7rem 0; }
   </style>
 </head>
 <body>
-  <header>
-    <p class="eyebrow">Computational quantum research</p>
-    <h1>Idea Space</h1>
-    <p class="lede">A navigable home for photonic quantum error-correction research ideas, literature reviews, and model handoffs.</p>
-  </header>
-  <main>
-    <h2>Explore the repository</h2>
-    <div class="grid">
-      <a class="card" href="./research.html">
-        <h3>Read the full handoff</h3>
-        <p>The complete research notebook, rendered directly inside this website with LaTeX support.</p>
-      </a>
-      <a class="card" href="https://github.com/AnishKumar-gesgts2/Idea-Space">
-        <h3>Browse the repository</h3>
-        <p>Open the source files, README, and repository history on GitHub.</p>
-      </a>
-      <a class="card" href="https://github.com/AnishKumar-gesgts2/Idea-Space/commits/main/">
-        <h3>Follow the iterations</h3>
-        <p>Review the commits that added and refined each research direction.</p>
-      </a>
-    </div>
-
-    <h2>Jump to sections</h2>
-    <div class="grid">
-      <a class="card" href="./research.html#8-current-active-project-idea-3-physical-photonic-noise-compiler">
-        <h3>Active project</h3>
-        <p>Physical photonic noise compiler and the abstraction gap between optical physics and scalable QEC.</p>
-      </a>
-      <a class="card" href="./research.html#18-new-candidate-projects">
-        <h3>Candidate projects</h3>
-        <p>Research questions with mechanisms, literature boundaries, experiments, and kill criteria.</p>
-      </a>
-      <a class="card" href="./research.html#19-comparison-and-ranking">
-        <h3>Rankings</h3>
-        <p>Compare novelty, importance, feasibility, integration strength, and publication potential.</p>
-      </a>
-      <a class="card" href="./research.html#20-concrete-execution-plan-for-the-recommended-project">
-        <h3>Execution plan</h3>
-        <p>Follow the recommended validation, implementation, and stop/go protocol.</p>
-      </a>
-    </div>
-
-    <h2>Math rendering</h2>
-    <p class="note">The handoff is hosted locally as HTML. MathJax renders its Markdown equations directly, including display equations such as
-      <code>$$P_L^{\mathrm{reduced}} \approx P_L^{\mathrm{microscopic}}$$</code>.
-    </p>
-  </main>
+  <h1>Idea Space</h1>
+  <p>The current idea record is a compact strikeout list. Check it before proposing a new direction.</p>
+  <ul>
+    <li><a href="https://github.com/AnishKumar-gesgts2/Idea-Space/blob/main/Strikeout%20List.md">Strikeout List</a></li>
+    <li><a href="https://github.com/AnishKumar-gesgts2/Idea-Space/blob/main/Research%20Criteria.md">Research Criteria</a></li>
+    <li><a href="https://github.com/AnishKumar-gesgts2/Idea-Space/tree/main/experiments">Completed Phase 0 results</a></li>
+    <li><a href="https://github.com/AnishKumar-gesgts2/Idea-Space/commits/main/">Earlier revisions</a></li>
+  </ul>
 </body>
 </html>

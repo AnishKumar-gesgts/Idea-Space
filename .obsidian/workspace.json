@@ -11,14 +11,10 @@
             "id": "4093ac53e81028d1",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Photonic Decoder Evaluations.md",
-                "mode": "preview",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Photonic Decoder Evaluations"
+              "title": "New tab"
             }
           }
         ]
@@ -188,10 +184,22 @@
       "bases:Create new base": false
     }
   },
-  "active": "cc7e78d1abafe386",
+  "active": "4093ac53e81028d1",
   "lastOpenFiles": [
+    "Novelty-First Quantum Photonics Idea Search — Round 2.md",
+    "Research Criteria.md",
+    "Strikeout List.md",
+    "Novelty-First Quantum Photonics Idea Search — Round 3.md",
+    "Quantum Photonics and Information Science — STORM Idea Evaluation.md",
+    "experiments/shared-pump-phase0/RESULTS.md",
+    "experiments/shared-pump-phase0/phase0.py",
+    "experiments/shared-pump-phase0",
     "Photonic QEC Research Ideation — Model Handoff Protocol (Unedited).md",
     "Photonic Decoder Evaluations.md",
+    "experiments/calibration-sufficiency-phase0/RESULTS.md",
+    "experiments/calibration-sufficiency-phase0/phase0.py",
+    "experiments/calibration-sufficiency-phase0",
+    "experiments",
     "Photonic Decoder Evaluations 1.md",
     "Photonic Decoder Evaluations"
   ]
